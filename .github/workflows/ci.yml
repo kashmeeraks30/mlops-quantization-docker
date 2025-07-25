@@ -27,7 +27,7 @@ jobs :
               uses : actions/upload-artifact@v4
               with :
                 name : Trained_Housing_Model
-                path : /Models/California_Housing_Model.joblib
+                path : Models/California_Housing_Model.joblib
     
     build_and_test_container :
         runs-on : ubuntu-latest
@@ -48,7 +48,7 @@ jobs :
             - name : Downloading trained model artifact
               uses : actions/download-artifact@v4
               with :
-                name : /Models/California_Housing_Model.joblib
+                name : California_Housing_Model.joblib
                 path : Models/
 
             - name : Building Docker Image
