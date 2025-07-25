@@ -24,7 +24,7 @@ jobs :
               run : python train.py
             
             - name : Upload model as artifact
-              uses : actions/upload-artifact@v3
+              uses : actions/upload-artifact@v4
               with :
                 name : Trained_Housing_Model
                 path : /Models/California_Housing_Model.joblib
@@ -46,7 +46,7 @@ jobs :
               run : pip install -r requirements.txt
 
             - name : Downloading trained model artifact
-              uses : actions/download-artifact@v3
+              uses : actions/download-artifact@v4
               with :
                 name : /Models/California_Housing_Model.joblib
                 path : Models/
